@@ -1,0 +1,41 @@
+{
+  "name": "month",
+  "version": "1.0.0",
+  "description": "React component for displaying days in a month",
+  "main": "dist/Month.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "prepublish": "mkdir -p dist && babel src --out-dir dist",
+    "build": "NODE_ENV=production webpack -p",
+    "start": "webpack-dev-server",
+    "test": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvooo/month.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tvooo/month/issues"
+  },
+  "homepage": "https://github.com/tvooo/month#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.3.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "date-fns": "^1.28.1"
+  }
+}

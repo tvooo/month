@@ -3,16 +3,18 @@ import moment from 'moment';
 
 const Day = ({
   date,
+  dayColor,
+  dayTodayColor,
+  dayMarkedColor,
   marked,
   today,
   ...props
 }) => {
   const sx = {
-    fill: marked ? 'blue' : '#eee',
+    fill: marked ? dayMarkedColor : dayColor,
     strokeWidth: today ? 3 : 0,
-    stroke: 'black',
-    // strokeDasharray: "6, 3"
-  }
+    stroke: dayTodayColor,
+  };
 
   const dt = moment(date)
   const weekDay = dt.isoWeekday();

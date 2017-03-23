@@ -2,6 +2,8 @@
 
 > A React component for simple calendar layouts using SVG
 
+[![Build Status](https://travis-ci.org/tvooo/month.svg?branch=master)](https://travis-ci.org/tvooo/month)
+
 ## Preview
 
 (Screenshot)

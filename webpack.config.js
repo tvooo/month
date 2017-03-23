@@ -9,31 +9,35 @@ module.exports = {
 
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'docs')
+    path: path.resolve(__dirname, 'docs'),
   },
 
   module: {
-    // loaders: [
-    //   { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-    //   { test: /\.json$/, loader: 'json' },
-    //   { test: /\.md/, loader: 'html!highlight!markdown' }
-    // ],
     rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
-      }, {
+        loader: 'babel-loader',
+      },
+      {
         test: /\.md/,
         use: [
-          { loader: 'html-loader', },
-          { loader: 'markdown-loader', },
+          { loader: 'html-loader' },
+          { loader: 'markdown-loader' },
         ],
       },
-    ]
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
+        ],
+      },
+    ],
   },
 
   devServer: {
-    contentBase: 'docs'
-  }
+    contentBase: 'docs',
+  },
 };

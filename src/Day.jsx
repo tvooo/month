@@ -1,5 +1,7 @@
-import React from 'react';
-import moment from 'moment';
+import React, { PropTypes } from 'react';
+import startOfMonth from 'date-fns/start_of_month';
+import differenceInCalendarWeeks from 'date-fns/difference_in_calendar_weeks';
+import sizes, { getDayCX, getDayCY } from './sizes';
 
 const Day = ({
   date,
@@ -12,24 +14,32 @@ const Day = ({
 }) => {
   const sx = {
     fill: marked ? dayMarkedColor : dayColor,
-    strokeWidth: today ? 3 : 0,
+    strokeWidth: today ? sizes.dayStrokeWidth : 0,
     stroke: dayTodayColor,
   };
 
-  const dt = moment(date)
-  const weekDay = dt.isoWeekday();
-  const day = dt.date();
-  const firstDayOfMonth = dt.startOf('month').isoWeekday();
-
-  const x = 40 + 25 * weekDay;
-  const y = 40 + 25 * (Math.floor((-weekDay + firstDayOfMonth + day) / 7));
+  const cx = getDayCX(date.getDay());
+  const cy = getDayCY(differenceInCalendarWeeks(date, startOfMonth(date), 0));
 
   return (
     <g>
-      <circle {...props} r="10" cx={x} cy={y} style={sx} />
-      <text x={x} y={y}></text>
+      <circle {...props} r={sizes.dayRadius} cx={cx} cy={cy} style={sx} />
     </g>
-  )
-}
+  );
+};
+
+Day.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+  dayColor: PropTypes.string.isRequired,
+  dayTodayColor: PropTypes.string.isRequired,
+  dayMarkedColor: PropTypes.string.isRequired,
+  marked: PropTypes.bool,
+  today: PropTypes.bool,
+};
+
+Day.defaultProps = {
+  marked: false,
+  today: false,
+};
 
 export default Day;

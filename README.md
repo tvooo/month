@@ -15,16 +15,12 @@ npm install --save vector-month
 ```
 
 ```js
-var React = require('react');
-var Icon = require('react-geomicons');
+import React from 'react';
+import Month from 'vector-month'
 
-module.exports = React.createClass({
-  render: function() {
-    <MyComponent>
-      <Icon name="bookmark" />
-    </MyComponent>
-  }
-});
+const App = () => (
+  <Month month={new Date()} />
+);
 ```
 
 ## Props

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import isWeekend from 'date-fns/is_weekend';
 import isPast from 'date-fns/is_past';
 import isFuture from 'date-fns/is_future';
-import isFriday from 'date-fns/is_friday';
 
 import Month from '..';
 

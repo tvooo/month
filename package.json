@@ -1,7 +1,7 @@
 {
-  "name": "month",
+  "name": "vector-month",
   "version": "1.0.0",
-  "description": "React component for displaying days in a month",
+  "description": "A React component for simple calendar layouts using SVG",
   "main": "dist/Month.js",
   "directories": {
     "doc": "docs"
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tvooo/month.git"
+    "url": "git+https://github.com/tvooo/vector-month.git"
   },
-  "author": "",
+  "author": "Tim von Oldenburg <tim@tvooo.de>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tvooo/month/issues"
+    "url": "https://github.com/tvooo/vector-month/issues"
   },
-  "homepage": "https://github.com/tvooo/month#readme",
+  "homepage": "https://github.com/tvooo/vector-month#readme",
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",

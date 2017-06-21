@@ -51,7 +51,6 @@
   },
   "dependencies": {
     "date-fns": "^1.28.1",
-    "react-responsive-grid": "^0.3.4",
-    "tachyons-sass": "^4.7.1"
+    "react-responsive-grid": "^0.3.4"
   }
 }

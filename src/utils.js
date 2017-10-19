@@ -17,11 +17,11 @@ const getDaysInMonth = (month) => {
   return daysInMonth;
 };
 
-export const getNumberOfWeeks = (month) => {
+export const getNumberOfWeeks = (month, weekStartsOn = 0) => {
   const firstOfMonth = startOfMonth(month);
   const lastOfMonth = endOfMonth(month);
 
-  return differenceInCalendarWeeks(lastOfMonth, firstOfMonth, 0) + 1;
+  return differenceInCalendarWeeks(lastOfMonth, firstOfMonth, { weekStartsOn }) + 1;
 };
 
 export default getDaysInMonth;

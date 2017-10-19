@@ -25,8 +25,8 @@ export const getMonthWidth = () => (
   + (sizes.daySpacing * 6)
 );
 
-export const getMonthHeight = month => (
+export const getMonthHeight = (month, weekStartsOn) => (
   sizes.dayStrokeWidth
-  + (sizes.dayRadius * 2 * getNumberOfWeeks(month))
-  + (sizes.daySpacing * (getNumberOfWeeks(month) - 1))
+  + (sizes.dayRadius * 2 * getNumberOfWeeks(month, weekStartsOn))
+  + (sizes.daySpacing * (getNumberOfWeeks(month, weekStartsOn) - 1))
 );

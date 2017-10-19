@@ -55,6 +55,7 @@ class Preview extends Component {
             key={`month-${month}`}
             month={new Date(2017, month)}
             marked={markedFunc[this.state.marked]}
+            weekStartsOn={1}
           />)}
         </div>
         <form>

@@ -10,6 +10,7 @@ const Day = ({
   dayMarkedColor,
   marked,
   today,
+  weekStartsOn,
   ...props
 }) => {
   const sx = {
@@ -18,8 +19,8 @@ const Day = ({
     stroke: dayTodayColor,
   };
 
-  const cx = getDayCX(date.getDay());
-  const cy = getDayCY(differenceInCalendarWeeks(date, startOfMonth(date), 0));
+  const cx = getDayCX((date.getDay() - weekStartsOn + 7) % 7);
+  const cy = getDayCY(differenceInCalendarWeeks(date, startOfMonth(date), { weekStartsOn }));
 
   return (
     <g>
@@ -35,11 +36,13 @@ Day.propTypes = {
   dayMarkedColor: PropTypes.string.isRequired,
   marked: PropTypes.bool,
   today: PropTypes.bool,
+  weekStartsOn: PropTypes.number,
 };
 
 Day.defaultProps = {
   marked: false,
   today: false,
+  weekStartsOn: 0,
 };
 
 export default Day;

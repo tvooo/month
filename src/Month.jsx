@@ -20,7 +20,7 @@ const Month = ({
     0,
     0,
     getMonthWidth(),
-    getMonthHeight(month),
+    getMonthHeight(month, weekStartsOn),
   ];
 
   return (
@@ -40,6 +40,7 @@ const Month = ({
             dayColor={dayColor}
             dayTodayColor={dayTodayColor}
             dayMarkedColor={dayMarkedColor}
+            weekStartsOn={weekStartsOn}
           />
         ))
       }

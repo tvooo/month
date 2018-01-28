@@ -1,5 +1,7 @@
 # vector-month
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tvooo/vector-month.svg)](https://greenkeeper.io/)
+
 > A React component for simple calendar layouts using SVG
 
 [![Build Status](https://travis-ci.org/tvooo/vector-month.svg?branch=master)](https://travis-ci.org/tvooo/vector-month)

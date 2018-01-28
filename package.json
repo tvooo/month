@@ -1,6 +1,6 @@
 {
   "name": "vector-month",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A React component for simple calendar layouts using SVG",
   "main": "dist/Month.js",
   "directories": {

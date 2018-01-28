@@ -20,7 +20,7 @@ const Day = ({
     stroke: dayTodayColor,
   };
 
-  const cx = getDayCX((date.getDay() - (weekStartsOn + 7)) % 7);
+  const cx = getDayCX(((date.getDay() - weekStartsOn) + 7) % 7);
   const cy = getDayCY(differenceInCalendarWeeks(date, startOfMonth(date), { weekStartsOn }));
 
   return (

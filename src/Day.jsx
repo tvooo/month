@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import startOfMonth from 'date-fns/start_of_month';
 import differenceInCalendarWeeks from 'date-fns/difference_in_calendar_weeks';
 import sizes, { getDayCX, getDayCY } from './sizes';
@@ -19,7 +20,7 @@ const Day = ({
     stroke: dayTodayColor,
   };
 
-  const cx = getDayCX((date.getDay() - weekStartsOn + 7) % 7);
+  const cx = getDayCX((date.getDay() - (weekStartsOn + 7)) % 7);
   const cy = getDayCY(differenceInCalendarWeeks(date, startOfMonth(date), { weekStartsOn }));
 
   return (
